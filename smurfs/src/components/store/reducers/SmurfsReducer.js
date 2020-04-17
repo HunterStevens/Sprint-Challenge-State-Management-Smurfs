@@ -1,5 +1,5 @@
 const initialState = {
-    character:[
+    characters:[
         {
             name: '',
             age: null,
@@ -23,7 +23,8 @@ export const SmurfsReducer = (state = initialState, action) =>{
         case 'FETCH_SMURFS_SUCCESS':
             return{
                 ...state,
-                character:[{
+                characters:[ ...state.characters,
+                    {
                     name:action.payload.name,
                     age:action.payload.age,
                     height:action.payload.height,
