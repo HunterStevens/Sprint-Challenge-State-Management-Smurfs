@@ -34,10 +34,15 @@ Store helps connect the components with action hooks as well as reducers. A 'sin
 
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
 
-
+Application is a state that is global to all components in an app, usefull when you want to use it in multiple components. Component state is local only to that specific component called, usefull when you're planning to mainly access the state in one component.
 
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+redux-thunk is another node package acting as middleware. Allows us to handle asynchronous operations in our Action Creators. Therefore allowing action creators to perfom such operations.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I really love Redux with Reducers because it allows you to keep your code clean and seperate chunks of it into different components. Plus using the action hooks allows us to provide functions for all kinds of situation in one component or another.
 
 ## Project Set Up
 
