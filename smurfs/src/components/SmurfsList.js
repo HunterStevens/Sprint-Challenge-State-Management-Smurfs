@@ -18,8 +18,8 @@ const SmurfsList = props =>{
             console.log(char);
             return(
                 <div key={char.id}>
-                    <h1>Name: {char.name}</h1>
-                    <h3>age:{char.age}</h3>
+                    <h2>Name: {char.name}</h2>
+                    <h4>age:{char.age}</h4>
                     <p>height:{char.height}</p>
                 </div>   
             )})}

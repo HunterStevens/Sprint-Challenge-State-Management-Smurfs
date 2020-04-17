@@ -5,6 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Smurf's List</h1>
         <SmurfsList/>
       </div>
     );
