@@ -6,10 +6,10 @@ const SmurfsForm = props => {
     const [smurf, setSmurf] = useState({
         name:'',
         age:'',
-        height:''
+        height:'',
+        id:Date.now()
     });
     const inputChange = event =>{
-        event.preventDefault();
         setSmurf({...smurf, [event.target.name]:event.target.value})
     }
 
@@ -20,21 +20,28 @@ const SmurfsForm = props => {
 
     return(
         <form onSubmit={formSubmit}>
+            <h3>New Smurf's Form</h3>
             <label htmlFor="smurfName">
+                Name:
                 <input id="smurfName"
+                name="smurfName"
                 type="text"
                 value={smurf.name}
                 onChange={inputChange}/>
             </label>
             <label htmlFor="smurfAge">
+                Age:
                 <input id="smurfAge"
                 type="text"
+                name="smurfAge"
                 value={smurf.age}
                 onChange={inputChange}/>
             </label>
             <label htmlFor="smurfHeight">
+                Height:
                 <input id="smurfHeight"
                 type="text"
+                name="smurfHeight"
                 value={smurf.height}
                 onChange={inputChange}/>
             </label>

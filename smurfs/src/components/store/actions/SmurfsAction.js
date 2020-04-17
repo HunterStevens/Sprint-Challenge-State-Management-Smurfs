@@ -20,9 +20,11 @@ export const newSmurfs = item =>{
         axios.post('http://localhost:3333/smurfs', item)
         .then(res =>{
             console.log("New Character API: ", res);
+            dispatch({type:"NEW_SMURF_SUCCESS", payload: res.data})
         })
         .catch(err =>{
             console.log("New Character ERROR: ", err);
+            dispatch({type:"NEW_SMURF_FAIL", payload:err})
         })
     }
 

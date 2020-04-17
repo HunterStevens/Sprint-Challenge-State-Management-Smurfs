@@ -21,11 +21,29 @@ export const SmurfsReducer = (state = initialState, action) =>{
             }
         
 
-        case 'FETCH_SMURFS_END':
+        case 'FETCH_SMURFS_FAIL':
             return{
                 ...state,
                 isFetching:false,
                 error:action.payload
+            }
+        case 'NEW_SMURF_SUCCESS':
+            const newSmurf ={
+                name:action.payload.name,
+                age:action.payload.age,
+                height:action.payload.height,
+                id:action.payload.id
+            }
+            return{
+                ...state,
+                characters:[...state.characters, newSmurf],
+                error:''
+            }
+        case 'NEW_SMURF_FAIL':
+            return{
+                ...state,
+                isFetching:false,
+                error: action.payload
             }
 
         default:
