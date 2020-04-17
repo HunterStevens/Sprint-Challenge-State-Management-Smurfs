@@ -1,12 +1,5 @@
 const initialState = {
-    characters:[
-        {
-            name: '',
-            age: null,
-            height: '',
-            id:Date.now()
-        }
-    ],
+    characters:[],
     isFetching:false,
     error:''
 }
@@ -23,17 +16,10 @@ export const SmurfsReducer = (state = initialState, action) =>{
         case 'FETCH_SMURFS_SUCCESS':
             return{
                 ...state,
-                characters:[ action.payload.map(smurf =>{
-                     return(
-                    name:smurf.name,
-                    age:smurf.age,
-                    height:smurf.height,
-                    id:smurf.id)
-                
-                })
-                   ],
+                characters:action.payload,
                 isFetching:false
             }
+        
 
         case 'FETCH_SMURFS_END':
             return{
