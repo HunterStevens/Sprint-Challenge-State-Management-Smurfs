@@ -23,13 +23,15 @@ export const SmurfsReducer = (state = initialState, action) =>{
         case 'FETCH_SMURFS_SUCCESS':
             return{
                 ...state,
-                characters:[ ...state.characters,
-                    {
-                    name:action.payload.name,
-                    age:action.payload.age,
-                    height:action.payload.height,
-                    id:action.payload.id
-                }],
+                characters:[ action.payload.map(smurf =>{
+                     return(
+                    name:smurf.name,
+                    age:smurf.age,
+                    height:smurf.height,
+                    id:smurf.id)
+                
+                })
+                   ],
                 isFetching:false
             }
 
