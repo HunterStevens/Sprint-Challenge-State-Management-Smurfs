@@ -14,3 +14,16 @@ export const fetchSmurfs = () =>{
         })
     }
 }
+
+export const newSmurfs = item =>{
+    return dispatch =>{
+        axios.post('http://localhost:3333/smurfs', item)
+        .then(res =>{
+            console.log("New Character API: ", res);
+        })
+        .catch(err =>{
+            console.log("New Character ERROR: ", err);
+        })
+    }
+
+}
