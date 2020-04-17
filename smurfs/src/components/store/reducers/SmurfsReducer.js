@@ -9,15 +9,15 @@ export const SmurfsReducer = (state = initialState, action) =>{
         case 'FETCH_SMURFS_START':
             return{
                 ...state,
-                isFetching:true,
-                error:''
+                isFetching:true
             }
 
         case 'FETCH_SMURFS_SUCCESS':
             return{
                 ...state,
                 characters:action.payload,
-                isFetching:false
+                isFetching:false,
+                error:''
             }
         
 

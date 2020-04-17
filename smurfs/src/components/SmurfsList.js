@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {fetchSmurfs} from './store/actions/SmurfsAction';
-import {Loader} from 'react-loader-spinner';
+import Loader from 'react-loader-spinner';
 
 const SmurfsList = props =>{
     useEffect(() => {
         props.fetchSmurfs();
     },[])
 
-    if(props.isFetching){
-        return<Loader/>
-    }
+   if(props.isFetching){
+       return<Loader/>
+   }
 
     return (
         <div className="mainList">
